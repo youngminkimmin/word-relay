@@ -30,7 +30,9 @@
     const writtenWord = document.querySelector("#writtenWord ul");
     const writtenWordArray = []; // 입력한 글자 저장하기 위한 배열... includes
     const firstWordArray = ["호랑이", "무지개", "떡뽁이", "오뎅탕", "가자미"];
-    writtenWordArray.push(firstWordArray[Math.floor(Math.random() * firstWordArray.length)]); //0,1,2,3,4
+    writtenWordArray.push(
+      firstWordArray[Math.floor(Math.random() * firstWordArray.length)]
+    ); //0,1,2,3,4
     //writtenWordArray.push("이발소");
     //writtenWordArray.push("소방서");
 
@@ -73,12 +75,20 @@
           } else {
             word.value = "";
             word.focus();
-            gsap.fromTo(word, { x: 100 }, { x: 0, ease: "elastic", duration: 0.5 });
+            gsap.fromTo(
+              word,
+              { x: 100 },
+              { x: 0, ease: "elastic", duration: 0.5 }
+            );
           }
         } else {
           word.value = "";
           word.focus();
-          gsap.fromTo(word, { x: 100 }, { x: 0, ease: "elastic", duration: 0.5 });
+          gsap.fromTo(
+            word,
+            { x: 100 },
+            { x: 0, ease: "elastic", duration: 0.5 }
+          );
         }
       }
     });
@@ -108,7 +118,7 @@
     // });
 
     /*
-    1. 주어진 단어의 마지막 글자와 입력하는 글자의 첫글자가 같으면 
+    1. 주어진 단어의 마지막 글자와 입력하는 글자의 첫글자가 같으면
     2. suggestWord의 글자는 입력한 글자로 바뀌고
     3. word의 내용은 공백으로 바뀌면서 focus가 들어가도록 코딩...
     4. 입력하는 글자는 3글자이어야 한다. 그렇지 않으면 경고창 띄우기...
